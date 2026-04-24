@@ -8,13 +8,13 @@ Created on Mon Apr 20 15:45:38 2026
 from gclass import Gclass
 import datetime   
 
-class Institutions(Gclass):
+class Institution(Gclass):
     obj = dict()
     lst = list()
     pos = 0
     sortkey = ''
     att = ['_id','_created_date','_name']
-    header = 'Institutions'
+    header = 'Institution'
     desc = ['Id','Created_Date','Name']
    
     def __init__(self, id, created_date, name):
@@ -24,8 +24,8 @@ class Institutions(Gclass):
         self._created_date = datetime.date.fromisoformat(created_date)
         self._name = name
         
-        Institutions.obj[self._id] = self
-        Institutions.lst.append(self._id)
+        Institution.obj[self._id] = self
+        Institution.lst.append(self._id)
 
     
     @property
@@ -54,8 +54,8 @@ class Institutions(Gclass):
         
 
 # print("--- Teste de Criação de Instituições ---")
-# i1 = Institutions(10, "2020-01-01", "Universidade de Coimbra")
-# i2 = Institutions("20", "2024-04-24", "Instituto Politécnico do Porto")
+# i1 = Institution(10, "2020-01-01", "Universidade de Coimbra")
+# i2 = Institution("20", "2024-04-24", "Instituto Politécnico do Porto")
 
 # print(f"Instituição 1: {i1.name} (Criada em: {i1.created_date})")
 # print(f"Instituição 2: {i2.name} (ID: {i2.id}, Tipo do ID: {type(i2.id)})")
@@ -66,10 +66,10 @@ class Institutions(Gclass):
 # print(f"Dados atualizados i1: {i1.name} - Data Histórica: {i1.created_date}")
 
 # print("\n--- Teste de Gestão Global ---")
-# print(f"Lista de IDs de Instituições: {Institutions.lst}")
-# print(f"Dicionário de Instituições: {Institutions.obj}")
+# print(f"Lista de IDs de Instituições: {Institution.lst}")
+# print(f"Dicionário de Instituições: {Institution.obj}")
 
-# if 10 in Institutions.obj and Institutions.obj[10].name == "U. Coimbra (Atualizado)":
+# if 10 in Institution.obj and Institution.obj[10].name == "U. Coimbra (Atualizado)":
 #     print("\n✅ Sucesso: A Instituição foi criada, armazenada e editada corretamente.")
 
 
