@@ -28,7 +28,7 @@ class Gclass:
     # Reset the class
     @classmethod
     def reset(cls):
-        cls.obk = dict()
+        cls.obj = dict() #mudamos aqui de obk para obj
         cls.lst = list()
         cls.pos = 0
     # Class method to return the primary key related lines

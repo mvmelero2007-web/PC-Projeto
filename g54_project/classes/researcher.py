@@ -13,24 +13,18 @@ class Researcher(Gclass):
     lst = list()
     pos = 0
     sortkey = ''
-    # Attribute names list, identifier attribute must be the first one and called 'id'
     att = ['_id','_name','_comments']
-    # Class header title
     header = 'Researcher'
-    # field header for use in, for example, input form
     desc = ['Id','Name','Comments']
-    # Constructor. Called when an object is instantiated
+    
     def __init__(self, id, name, comments):
         super().__init__()
-        # Object attributes
         self._id = int(id)
         self._name = name
         self._comments = comments
         
-        # Add the new object to the dictionary of objects
-        Researcher.obj[id] = self
-        # Add the id to the list of object ids
-        Researcher.lst.append(id)
+        Researcher.obj[self._id] = self
+        Researcher.lst.append(self._id)
 
     
     @property
@@ -38,24 +32,44 @@ class Researcher(Gclass):
         return self._id
 
     @id.setter
-    def id(self, id):
-        self._id = id
+    def id(self, novo):
+        self._id = novo
 
     @property
     def name(self):
         return self._name
     
     @name.setter
-    def name(self, name):
-        self._name = name
+    def name(self, novo):
+        self._name = novo
          
     @property
     def comments(self):
         return self._comments
 
     @comments.setter
-    def comments(self, comments):
-        self._comments = comments
+    def comments(self, novo):
+        self._comments = novo
+        
+
+# print("--- Teste de Criação ---")
+# r1 = Researcher(101, "Dr. Alan Turing", "Pioneiro da computação")
+# r2 = Researcher("102", "Ada Lovelace", "Primeira programadora") 
+
+# print(f"Investigador 1: {r1.name} (ID: {r1.id})")
+# print(f"Investigador 2: {r2.name} (ID: {r2.id})")
+
+# print("\n--- Teste de Alteração ---")
+# r1.name = "Alan M. Turing"
+# r1.comments = "Lógica e Criptografia"
+# print(f"Dados atualizados r1: {r1.name} - {r1.comments}")
+
+# print("\n--- Teste de Gestão Global ---")
+# print(f"Lista de IDs ativos: {Researcher.lst}")
+# print(f"Dicionário de objetos: {Researcher.obj}")
+
+# if Researcher.obj[101] == r1:
+#     print("\n✅ Sucesso: O objeto r1 está guardado corretamente no dicionário da classe.")
 
    
         
