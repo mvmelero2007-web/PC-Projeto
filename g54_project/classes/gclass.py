@@ -7,8 +7,8 @@ Created on Mon Apr 20 15:44:50 2026
 
 # Generic Class
 import sys
-# import datetime
-# import sqlite3
+import datetime
+import sqlite3
 
 class Gclass:
     # Constructor: Called when an object is instantiated
